@@ -87,10 +87,10 @@ body {
 #project:hover {
     background-color: rgb(208,134,97);
 }
-.active {
+.active-project {
     background-color: rgb(208,134,97);
 }
-.not-active {
+.not-active-project {
     background-color: var(--peach-color);
 }
 
