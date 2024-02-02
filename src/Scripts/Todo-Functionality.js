@@ -1,0 +1,1 @@
+import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";

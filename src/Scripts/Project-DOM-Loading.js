@@ -31,8 +31,7 @@ function loadProjects() {
         }
     }
     newProjectList += `${createButtonHTML()}`;
-
     projectList.innerHTML = newProjectList;
 }
-loadProjects();
-console.log(storage);
+
+export {loadProjects};
