@@ -1,5 +1,5 @@
 import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
-
+import { deleteButton } from "./Project-Functionality.js";
 
 //todo format {"name":"name","description":"description","dueDate":"dueDate","priority"}
 
@@ -20,12 +20,20 @@ function todoTemplate(name,priority) {
 }
 
 function loadTodoList(currentProject) {
+    
     projectTitle.textContent = currentProject.name;
+    if (currentProject.name === "Default") {
+        deleteButton.textContent = "Cannot Delete";
+    }
+    else {
+        deleteButton.textContent = "Delete Project";
+    }
     let newTodoList = ``;
     for (const todo of currentProject.projectTodoList){
         newTodoList += todoTemplate(todo.name,todo.priority);
     }
     newTodoList += createTodoButton();
+    
     todoList.innerHTML = newTodoList;
 }
 

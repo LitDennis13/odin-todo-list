@@ -1,11 +1,12 @@
 import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
-
+import { loadProjects } from "./Project-DOM-Loading.js";
 function Project(name) {
     let projectTodoList = [];
     return {name,projectTodoList};
 }
 
+let deleteButton = document.querySelector("#delete-project");
 let projectsArea = document.querySelector("#projects");
 
 projectsArea.addEventListener("click",(event) => {
@@ -18,6 +19,7 @@ projectsArea.addEventListener("click",(event) => {
     }
 });
 
+deleteButton.addEventListener("click",deleteProject);
 
 function resetActiveProject() {
     for (const proj of document.querySelectorAll("#project")) {
@@ -36,5 +38,34 @@ function findProject(name) {
         }
     }
 }
-export {Project};
+
+function deleteProject(event) {
+    let target = event.target;
+    if (target.innerText === "Cannot Delete") {
+        return;
+    }
+    let defaultProject = document.querySelector("#project:first-child");
+    let currentProject = document.querySelector("#todos > h1").innerText;
+    resetActiveProject();
+    defaultProject.classList.remove("not-active-project");
+    defaultProject.classList.add("active-project");
+    let i = 0;
+    for (const proj of storage) {
+        if (proj.name === currentProject) {
+            storage.splice(i,i+1);
+            console.log(storage);
+            break;
+        }
+        else {
+            i++;
+            continue;
+        }
+    }
+    loadProjects();
+    loadTodoList(storage[0]);
+}
+
+
+
+export {Project,deleteButton};
 
