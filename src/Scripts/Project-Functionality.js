@@ -1,11 +1,12 @@
 import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
 import { loadProjects } from "./Project-DOM-Loading.js";
+
 function Project(name) {
     let projectTodoList = [];
     return {name,projectTodoList};
 }
-
+let renameButton = document.querySelector("#rename-project");
 let deleteButton = document.querySelector("#delete-project");
 let projectsArea = document.querySelector("#projects");
 
@@ -66,6 +67,15 @@ function deleteProject(event) {
 }
 
 
+renameButton.addEventListener("click",renameProject);
 
-export {Project,deleteButton};
+function renameProject(event) {
+    let target = event.target;
+    if (target.innerText === "Cannot Rename") {
+        return;
+    }
+}
+
+
+export {Project,deleteButton,renameButton,findProject};
 

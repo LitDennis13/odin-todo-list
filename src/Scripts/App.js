@@ -3,10 +3,11 @@ import { Project } from "./Project-Functionality";
 import { loadProjects } from "./Project-DOM-Loading.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
 
-storage[0].projectTodoList = [{"name":"Todo One","description":"description","dueDate":"dueDate","priority":"1"}];
+storage[0].projectTodoList = [
+    {"name":"Todo One","description":"description","dueDate":"dueDate","priority":"1"},
+    {"name":"Todo Two","description":"descriptionTWO","dueDate":"dueDateTWO","priority":"2"}];
 
 
-storage[1] = Project("TestProject");
 
 loadProjects();
 loadTodoList(storage[0]);

@@ -1,5 +1,5 @@
 import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
-import { deleteButton } from "./Project-Functionality.js";
+import { deleteButton,renameButton } from "./Project-Functionality.js";
 
 //todo format {"name":"name","description":"description","dueDate":"dueDate","priority"}
 
@@ -24,9 +24,11 @@ function loadTodoList(currentProject) {
     projectTitle.textContent = currentProject.name;
     if (currentProject.name === "Default") {
         deleteButton.textContent = "Cannot Delete";
+        renameButton.textContent = "Cannot Rename";
     }
     else {
-        deleteButton.textContent = "Delete Project";
+        deleteButton.textContent = "Delete";
+        renameButton.textContent = "Rename";
     }
     let newTodoList = ``;
     for (const todo of currentProject.projectTodoList){
@@ -37,4 +39,4 @@ function loadTodoList(currentProject) {
     todoList.innerHTML = newTodoList;
 }
 
-export {loadTodoList};
+export {loadTodoList,todoList};
