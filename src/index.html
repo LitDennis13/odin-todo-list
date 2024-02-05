@@ -20,7 +20,24 @@
         </div>
     </div>
 
-    
+    <dialog id="create-project-dialog">
+        <form id="createProjectForm" action="#" method="dialog">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" required>
+            <button id="create-project-dialog-button" type="submit">Create</button>
+            <button id="create-project-close" type="button">Close</button>
+            
+        </form>
+    </dialog>
 
+    <dialog id="rename-project-dialog">
+        <form id="renameProjectForm" action="#" method="dialog">
+            <label for="projectName">Project Rename</label>
+            <input type="text" id="projectRename" placeholder="" required>
+            <button id="rename-project-dialog-button" type="submit">Rename</button>
+            <button id="rename-project-close" type="button">Close</button>
+            
+        </form>
+    </dialog>
 </body>
 </html>

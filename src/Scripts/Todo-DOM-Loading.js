@@ -37,6 +37,7 @@ function loadTodoList(currentProject) {
     newTodoList += createTodoButton();
     
     todoList.innerHTML = newTodoList;
+    
 }
 
-export {loadTodoList,todoList};
+export {loadTodoList,todoList,projectTitle};

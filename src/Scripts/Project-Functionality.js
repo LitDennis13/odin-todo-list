@@ -77,5 +77,5 @@ function renameProject(event) {
 }
 
 
-export {Project,deleteButton,renameButton,findProject};
+export {Project,deleteButton,renameButton,resetActiveProject,findProject};
 
