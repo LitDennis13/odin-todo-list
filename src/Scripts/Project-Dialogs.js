@@ -6,7 +6,6 @@ import { projectTitle } from "./Todo-DOM-Loading.js";
 
 let createProjectDialog = document.querySelector("#create-project-dialog");
 
-let createButton = document.querySelector("#create-project");
 
 let closeProjectDialog = document.querySelector("#create-project-close");
 

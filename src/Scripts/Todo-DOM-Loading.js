@@ -1,7 +1,8 @@
 import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
 import { deleteButton,renameButton } from "./Project-Functionality.js";
+import {addEventListenToCreateTodo} from "./Todo-Dialogs.js"
 
-//todo format {"name":"name","description":"description","dueDate":"dueDate","priority"}
+
 
 let projectTitle = document.querySelector("#project-title");
 let todoList = document.querySelector("#todo-list");
@@ -37,7 +38,8 @@ function loadTodoList(currentProject) {
     newTodoList += createTodoButton();
     
     todoList.innerHTML = newTodoList;
-    
+    let createTodoButtonHTML = document.querySelector("#create-todo");
+    addEventListenToCreateTodo(createTodoButtonHTML);
 }
 
 export {loadTodoList,todoList,projectTitle};

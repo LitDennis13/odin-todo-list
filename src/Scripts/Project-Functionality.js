@@ -54,7 +54,6 @@ function deleteProject(event) {
     for (const proj of storage) {
         if (proj.name === currentProject) {
             storage.splice(i,1);
-            console.log(storage);
             break;
         }
         else {

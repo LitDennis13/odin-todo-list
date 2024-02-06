@@ -36,7 +36,38 @@
             <input type="text" id="projectRename" placeholder="" required>
             <button id="rename-project-dialog-button" type="submit">Rename</button>
             <button id="rename-project-close" type="button">Close</button>
+        </form>
+    </dialog>
+
+    <dialog id="create-todo-dialog">
+        <form id="createTodoForm" action="#" method="dialog">
+
+            <div id="todoNameArea">
+                <label for="todoName">Todo Name</label>
+                <input type="text" id="todoName" placeholder="" required>
+            </div>
             
+            <div id="todoDescriptionArea">
+                <label for="todoDescription">Todo Description</label>
+                <textarea id="todoDescription"></textarea>
+            </div>
+
+            <div id="todoPriorityArea">
+                <label for="todoPriority">Todo Priority</label>
+                <select id="todoPriority" size="3">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div id="todoDateArea">
+                <label for="todoDate">Todo Date</label>
+            </div>
+            <input type="date" id="todoDate" required>
+
+            <button id="create-todo-dialog-button" type="submit">Create</button>
+            <button id="create-todo-close" type="button">Close</button>
         </form>
     </dialog>
 </body>

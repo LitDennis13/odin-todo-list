@@ -6,6 +6,7 @@ import { findProject } from "./Project-Functionality.js";
 todoList.addEventListener("click",expandTodo);
 
 
+
 function expandTodo(event) {
     let target = event.target;
     
@@ -13,12 +14,20 @@ function expandTodo(event) {
         
         let todoName = target.parentElement.querySelector("#todo-name").textContent;
         let project = findProject(document.querySelector("#project-title").textContent);
+        
+        try {
+            document.querySelector("#todo-extra-info").remove();
+        }
+        catch {}
+
 
         if (target.parentElement.classList == "clicked") {
+            
             target.parentElement.classList = "";
             loadTodoList(project);
         }
         else {
+            
             closeTodos();
             target.parentElement.classList = "clicked";
 
@@ -44,6 +53,7 @@ function expandTodo(event) {
 
             target.parentElement.appendChild(todoExtras);
             
+            
         }       
     }
 }
@@ -59,10 +69,12 @@ function findTodo(project, todoName) {
     }
 }
 
-function closeTodos() {
+
+function closeTodos(todoExtras) {
     let currentTodos = document.querySelectorAll("#todo");
     currentTodos.forEach((todo) => {
-        todo.classList = "";
+        todo.classList = "";        
     });
-    
 }
+
+
