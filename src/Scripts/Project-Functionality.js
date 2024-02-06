@@ -53,7 +53,7 @@ function deleteProject(event) {
     let i = 0;
     for (const proj of storage) {
         if (proj.name === currentProject) {
-            storage.splice(i,i+1);
+            storage.splice(i,1);
             console.log(storage);
             break;
         }
