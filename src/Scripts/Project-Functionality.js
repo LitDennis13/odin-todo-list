@@ -61,6 +61,7 @@ function deleteProject(event) {
             continue;
         }
     }
+    saveStorage();
     loadProjects();
     loadTodoList(storage[0]);
 }

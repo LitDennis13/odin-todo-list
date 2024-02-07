@@ -47,6 +47,7 @@ newProjectName.addEventListener("keydown",() => {
 function createProject(projectName) {
     let nextProjectNumber = storage.length;
     storage[nextProjectNumber] = Project(projectName);
+    saveStorage();
     loadProjects();
     loadTodoList(storage[nextProjectNumber]);
     resetActiveProject();
@@ -128,6 +129,7 @@ function renameProject(currentProjectName,newProjectName) {
     }
     
     storage[i-1].name = newProjectName;
+    saveStorage();
     loadProjects();
     loadTodoList(storage[i-1]);
     resetActiveProject();

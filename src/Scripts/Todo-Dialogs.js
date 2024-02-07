@@ -60,6 +60,7 @@ function createTodo() {
         "priority": todoPriority.value
     }
     storage[i].projectTodoList.push(newTodo);
+    saveStorage();
 }
 
 
@@ -142,9 +143,10 @@ saveTodoButton.addEventListener("click", (event) => {
 
 deleteTodoButton.addEventListener("click", () => {
     storage[findProjectNumber()].projectTodoList.splice(currentTodoNumber,1);
+    saveStorage();
     loadTodoList(findProject(projectTitle.textContent));
     editTodoDialog.close();
-    console.log(storage);
+    
 });
 
 
@@ -157,6 +159,8 @@ function editTodo() {
     storage[findProjectNumber()].projectTodoList[currentTodoNumber].priority =  editTodoPriority.value;
 
     storage[findProjectNumber()].projectTodoList[currentTodoNumber].dueDate = editTodoDate.value;
+
+    saveStorage();
     
 }
 
@@ -191,29 +195,6 @@ function findTodo(todoName) {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export {addEventListenToCreateTodo};
