@@ -82,8 +82,8 @@ body {
     color: white;
     font-family: "AppleSanFranciscoBold";
     border: none;
-    
 }
+
 #project:hover {
     background-color: rgb(208,134,97);
 }
@@ -201,7 +201,7 @@ body {
     background-color: rgb(225,225,225);
 }
 .checked-todo > #check-button {
-    background-color: black;
+    background-color: var(--peach-color);   
 }
 #todo-name {
     grid-area: 1 / 2 / 2 / 3;

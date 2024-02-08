@@ -83,6 +83,9 @@ function checkInputValidities() {
     if (todoDate.checkValidity() === false) {
         return false;
     }
+    if (todoPriority.checkValidity() === false) {
+        return false;
+    }
     return true;
 }
 

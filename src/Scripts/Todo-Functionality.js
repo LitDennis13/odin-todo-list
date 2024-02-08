@@ -20,15 +20,15 @@ function expandTodo(event) {
         catch {}
 
 
-        if (target.parentElement.classList == "clicked") {
+        if (target.parentElement.classList.contains("clicked") === true) {
             
-            target.parentElement.classList = "";
+            target.parentElement.classList.remove("clicked");
             loadTodoList(project);
         }
         else {
             
             closeTodos();
-            target.parentElement.classList = "clicked";
+            target.parentElement.classList.add("clicked");
 
             let todoExtras = document.createElement("div");
             let description = document.createElement("p");
@@ -72,7 +72,7 @@ function findTodo(project, todoName) {
 function closeTodos(todoExtras) {
     let currentTodos = document.querySelectorAll("#todo");
     currentTodos.forEach((todo) => {
-        todo.classList = "";        
+        todo.classList.remove("clicked");        
     });
 }
 
