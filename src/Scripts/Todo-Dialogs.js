@@ -1,4 +1,4 @@
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
+import {storage, saveStorage} from "./WebStorageAPI.js";
 
 
 import { loadTodoList,todoList } from "./Todo-DOM-Loading.js";
@@ -57,7 +57,8 @@ function createTodo() {
         "name": todoName.value,
         "description": todoDescription.value,
         "dueDate": todoDate.value,
-        "priority": todoPriority.value
+        "priority": todoPriority.value,
+        "checked": false,
     }
     storage[i].projectTodoList.push(newTodo);
     saveStorage();
@@ -197,7 +198,7 @@ function findTodo(todoName) {
 }
 
 
-export {addEventListenToCreateTodo};
+export {addEventListenToCreateTodo,returnCurrentTodo,findProjectNumber};
 
 
 function getFormattedDate() {

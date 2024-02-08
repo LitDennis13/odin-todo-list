@@ -1,4 +1,4 @@
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
+import {storage, saveStorage} from "./WebStorageAPI.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
 import { loadProjects } from "./Project-DOM-Loading.js";
 

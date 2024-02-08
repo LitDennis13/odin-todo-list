@@ -1,5 +1,4 @@
 import { todoList } from "./Todo-DOM-Loading.js";
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
 import { findProject } from "./Project-Functionality.js";
 

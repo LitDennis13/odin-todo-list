@@ -1,4 +1,4 @@
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
+import {storage} from "./WebStorageAPI.js";
 import  {addEventListenToCreateButton} from "./Project-Dialogs.js";
  
 let projectList = document.querySelector("#projects");

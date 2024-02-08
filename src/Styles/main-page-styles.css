@@ -200,6 +200,9 @@ body {
 #check-button:hover {
     background-color: rgb(225,225,225);
 }
+.checked-todo > #check-button {
+    background-color: black;
+}
 #todo-name {
     grid-area: 1 / 2 / 2 / 3;
     color: white;

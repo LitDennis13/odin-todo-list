@@ -1,4 +1,3 @@
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
 import { deleteButton,renameButton } from "./Project-Functionality.js";
 import {addEventListenToCreateTodo} from "./Todo-Dialogs.js"
 
@@ -11,7 +10,15 @@ function createTodoButton() {
     return `<button id="create-todo"><p>Create Todo</p></button>`;
 }
 
-function todoTemplate(name,priority) {
+function todoTemplate(name,priority,check) {
+    if (check === true) {
+        return `<button id="todo" class="checked-todo">
+        <div id="check-button"></div>
+        <p id="todo-name">${name}</p>
+        <p id="todo-priority">Priority ${priority}</p>
+        <img src="${require('../Images/more-options-img.png')}" alt="More Options Button">
+        </button>`;
+    }
     return `<button id="todo">
     <div id="check-button"></div>
     <p id="todo-name">${name}</p>
@@ -31,13 +38,20 @@ function loadTodoList(currentProject) {
         deleteButton.textContent = "Delete";
         renameButton.textContent = "Rename";
     }
-    let newTodoList = ``;
+    let newTodoListUC = ``;
+    let newTodoListC = ``;
     for (const todo of currentProject.projectTodoList){
-        newTodoList += todoTemplate(todo.name,todo.priority);
+        if (todo.checked === true) {
+            newTodoListC += todoTemplate(todo.name,todo.priority,true);
+        }
+        else {
+            newTodoListUC += todoTemplate(todo.name,todo.priority);
+        }
     }
-    newTodoList += createTodoButton();
+    newTodoListUC += newTodoListC;
+    newTodoListUC += createTodoButton();
     
-    todoList.innerHTML = newTodoList;
+    todoList.innerHTML = newTodoListUC;
     let createTodoButtonHTML = document.querySelector("#create-todo");
     addEventListenToCreateTodo(createTodoButtonHTML);
 }

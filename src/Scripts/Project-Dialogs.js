@@ -1,11 +1,10 @@
-import {storage, saveStorage,resetStorage} from "./WebStorageAPI.js";
+import {storage, saveStorage} from "./WebStorageAPI.js";
 import { Project,resetActiveProject } from "./Project-Functionality";
 import { loadProjects } from "./Project-DOM-Loading.js";
 import { loadTodoList } from "./Todo-DOM-Loading.js";
 import { projectTitle } from "./Todo-DOM-Loading.js";
 
 let createProjectDialog = document.querySelector("#create-project-dialog");
-
 
 let closeProjectDialog = document.querySelector("#create-project-close");
 
