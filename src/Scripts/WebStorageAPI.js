@@ -1,4 +1,4 @@
-if(typeof(localStorage.getItem("TodoObjectStorage"))=='undefined') {
+/*if(typeof(localStorage.getItem("TodoObjectStorage"))=='undefined') {
     localStorage.setItem("TodoObjectStorage",`[{"name":"Default","projectTodoList":[]}]`);
 }
 
@@ -12,9 +12,14 @@ function resetStorage() {
 function saveStorage() {
     localStorage.setItem("TodoObjectStorage",JSON.stringify(storage));
 }
+*/
+let storage = [{"name":"Default","projectTodoList":[]}];
 
+function saveStorage() {
+    return;
+}
 
-export {storage, saveStorage,resetStorage};
+export {storage, saveStorage};
 
 
 
