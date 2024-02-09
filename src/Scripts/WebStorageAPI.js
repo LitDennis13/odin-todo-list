@@ -1,23 +1,36 @@
-/*if(typeof(localStorage.getItem("TodoObjectStorage"))=='undefined') {
-    localStorage.setItem("TodoObjectStorage",`[{"name":"Default","projectTodoList":[]}]`);
+let WSAPI = false;
+
+if (typeof(Storage) !== "undefined") {
+    WSAPI = true;
 }
 
-let storage = JSON.parse(localStorage.getItem("TodoObjectStorage"));
+if((typeof localStorage["TodoObjectStorage"]) === "undefined" && WSAPI === true) {
+    localStorage["TodoObjectStorage"] = `[{"name":"Default","projectTodoList":[]}]`;
+    
+}
+let storage = [];
+if (WSAPI === true) {
+    storage = JSON.parse(localStorage["TodoObjectStorage"]);
+}
+else {
+    storage = [{"name":"Default","projectTodoList":[]}]
+}
+
 
 function resetStorage() {
-    localStorage.setItem("TodoObjectStorage",`[{"name":"Default","projectTodoList":[]}]`);
-    storage = JSON.parse(localStorage.getItem("TodoObjectStorage"));
+    if (WSAPI === true) {
+        localStorage["TodoObjectStorage"] = `[{"name":"Default","projectTodoList":[]}]`;
+        storage = JSON.parse(localStorage["TodoObjectStorage"]);
+    }
 }
 
 function saveStorage() {
-    localStorage.setItem("TodoObjectStorage",JSON.stringify(storage));
+    if (WSAPI === true) {
+        localStorage["TodoObjectStorage"] = JSON.stringify(storage);
+    }
 }
-*/
-let storage = [{"name":"Default","projectTodoList":[]}];
 
-function saveStorage() {
-    return;
-}
+
 
 export {storage, saveStorage};
 
